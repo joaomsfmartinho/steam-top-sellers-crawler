@@ -94,3 +94,7 @@ FEED_EXPORT_ENCODING = "utf-8"
 
 
 CLOSESPIDER_ITEMCOUNT = 100
+
+# Configure cache (enables logging to cache)
+HTTPCACHE_ENABLED = True
+HTTPCACHE_EXPIRATION_SECS = 3600

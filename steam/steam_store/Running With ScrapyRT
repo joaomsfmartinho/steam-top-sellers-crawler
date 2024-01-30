@@ -1,0 +1,8 @@
+Launching ScrapyRT in the project directory:
+
+scrapyrt -p 8080
+
+
+Now you can query the API:
+
+1. Go to localhost:8080/crawl.json?start_requests=true&spider_name=best_sellers

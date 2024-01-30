@@ -4,25 +4,25 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 import re
 import scrapy
-from scrapy.loader.processors import TakeFirst, MapCompose, Join
+from scrapy.loader.processors import TakeFirst, MapCompose
 
 
-def remove_tags(review_summary):
-    cleaned_review_summary = ""
+def clean_review(review):
+    cleaned_review = ""
     try:
-        cleaned_review_summary = re.sub('<[^<]+?>', '', review_summary)
+        cleaned_review = review.replace("<br>", "! ").strip()
     except:
-        cleaned_review_summary = review_summary
-    return cleaned_review_summary
+        cleaned_review = review
+    return cleaned_review
 
 
-def remove_html(review_summary):
-    cleaned_review_summary = ""
+def clean_release_date(release_date):
+    cleaned_release_date = ""
     try:
-        cleaned_review_summary = remove_tags(review_summary)
+        cleaned_release_date = release_date.replace(",", "").strip()
     except:
-        cleaned_review_summary = "No reviews yet"
-    return cleaned_review_summary
+        cleaned_release_date = release_date
+    return cleaned_release_date
 
 
 def get_platforms(platform):
@@ -64,14 +64,14 @@ class SteamStoreItem(scrapy.Item):
         output_processor=TakeFirst()
     )
     release_date = scrapy.Field(
+        input_processor=MapCompose(clean_release_date),
         output_processor=TakeFirst()
     )
     platforms = scrapy.Field(
         input_processor=MapCompose(get_platforms),
-        output_processor=Join("; ")
     )
     rating = scrapy.Field(
-        input_processor=MapCompose(remove_html),
+        input_processor=MapCompose(clean_review),
         output_processor=TakeFirst()
     )
     price = scrapy.Field(

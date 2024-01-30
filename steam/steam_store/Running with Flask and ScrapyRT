@@ -1,0 +1,6 @@
+First, launch ScrapyRT as explained in the documentation.
+
+Then, run the flask app. It will start a web server on port 5000.
+
+Open your browser and go to http://localhost:5000. You should see a json response with the scraped data.
+You can go to http://localhost:5000/show to

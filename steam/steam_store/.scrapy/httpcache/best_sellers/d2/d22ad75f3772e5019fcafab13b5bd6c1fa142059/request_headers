@@ -1,0 +1,8 @@
+X-Requested-With: XMLHttpRequest
+Accept: text/javascript, text/html, application/xml, text/xml, */*
+Content-Type: application/json
+Referer: https://store.steampowered.com/search/results/?query&start=100&count=50&dynamic_data=&sort_by=_ASC&supportedlang=english&snr=1_7_7_7000_7&filter=topsellers&infinite=1
+Accept-Language: en
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+Accept-Encoding: gzip, deflate, br
+Cookie: steamCountry=PT%7C25eccf040a1638f6d110f22cb0e5f292; sessionid=05ea26baba23c2d73fe78cc8
