@@ -92,4 +92,9 @@ REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
 
+<<<<<<< HEAD
 CLOSESPIDER_ITEMCOUNT = 150
+=======
+
+CLOSESPIDER_ITEMCOUNT = 100
+>>>>>>> 19fcfbf (:recycle: :hammer: :art: Improved code)
